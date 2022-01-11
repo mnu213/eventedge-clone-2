@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import SlidingMenu from './Sliding-Menu';
+import SlidingMenu from '../sliding-menu/Sliding-Menu';
 
 function Navigation() {
   const [menuVisible, setMenuVisible] = useState(false);
