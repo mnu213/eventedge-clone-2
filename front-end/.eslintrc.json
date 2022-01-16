@@ -15,6 +15,9 @@
   "rules": {
     "react/function-component-definition": "off",
     "no-unused-vars": "off",
-    "react/prop-types": "off"
+    "react/prop-types": "off",
+    "import/prefer-default-export": "off",
+    "arrow-body-style": "off",
+    "prefer-const": "off"
   }
 }
