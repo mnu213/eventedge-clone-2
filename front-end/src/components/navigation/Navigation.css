@@ -1,0 +1,14 @@
+nav {
+    display: inline;
+}
+.title{
+    float: none;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%,8px);
+    margin: 0;
+    top: 0;
+}
+a{
+    float: right;
+}

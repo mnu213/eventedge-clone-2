@@ -1,0 +1,11 @@
+.slidingMenu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 25%;
+  height: 100%;
+  background-color: red;
+  z-index: 2000;
+  padding: 10px;
+
+}
