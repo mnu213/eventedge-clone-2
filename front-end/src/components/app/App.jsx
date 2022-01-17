@@ -5,6 +5,7 @@ import Navigation from '../navigation/Navigation';
 import Login from '../login/Login';
 import Registration from '../registration/Registration';
 import Home from '../home/home';
+import Events from '../events/Events';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
             <Route path="home" element={<Home />} />
             <Route path="login" element={<Login />} />
             <Route path="registration" element={<Registration />} />
+            <Route path="events" element={<Events/>}/>
           </Route>
         </Routes>
       </BrowserRouter>

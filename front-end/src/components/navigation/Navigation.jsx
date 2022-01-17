@@ -7,7 +7,8 @@ function Navigation() {
   const [menuVisible, setMenuVisible] = useState(false);
 
   return (
-    <div>
+    <>
+    <div className='navbar'>
       <nav>
         <button type="submit" onClick={() => setMenuVisible(true)}>
           ☰
@@ -18,8 +19,9 @@ function Navigation() {
         </Link>
       </nav>
       {menuVisible && <SlidingMenu onClose={() => setMenuVisible(false)} />}
-      <Outlet/>
     </div>
+    <Outlet/>
+    </>
   );
 }
 
