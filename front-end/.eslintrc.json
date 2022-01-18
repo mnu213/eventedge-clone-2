@@ -20,6 +20,7 @@
     "arrow-body-style": "off",
     "prefer-const": "off",
     "jsx-a11y/label-has-associated-control": "off",
-    "no-alert": "off"
+    "no-alert": "off",
+    "jsx-a11y/anchor-is-valid": "off"
   }
 }
