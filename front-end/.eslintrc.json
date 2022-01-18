@@ -18,6 +18,9 @@
     "react/prop-types": "off",
     "import/prefer-default-export": "off",
     "arrow-body-style": "off",
-    "prefer-const": "off"
+    "prefer-const": "off",
+    "jsx-a11y/label-has-associated-control": "off",
+    "no-alert": "off",
+    "jsx-a11y/anchor-is-valid": "off"
   }
 }
