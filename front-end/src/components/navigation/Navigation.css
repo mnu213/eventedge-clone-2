@@ -1,15 +1,13 @@
-
-.navbar{
-    margin-bottom: 25px;
+.navbar {
+  margin-bottom: 25px;
 }
-a{
-    float: right;
+a {
+  float: right;
 }
-.title{
-    position:absolute;
-    top:0;
-    left:50%;
-    display: inline;
-    transform: translate(-50%,-50%);
-
+.title {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  display: inline;
+  transform: translate(-50%, -50%);
 }

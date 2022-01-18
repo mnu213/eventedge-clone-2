@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './Sliding-Menu.module.css'
+import styles from './Sliding-Menu.module.css';
 
 function SlidingMenu(props) {
   const { onClose } = props;
