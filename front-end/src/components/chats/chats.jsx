@@ -1,5 +1,14 @@
 import React from 'react';
+import Chat from './chat/Chat';
 
 export default function Chats() {
-  return <h1>CHATS</h1>;
+  return (
+      <>
+          <input/>
+          <button type="button"> + </button>
+          <Chat/>
+          <Chat/>
+          <Chat/>
+      </>
+  );
 }
