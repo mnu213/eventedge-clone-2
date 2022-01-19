@@ -1,14 +1,18 @@
 import { React, useState } from 'react';
 
 export default function Login() {
-  const [loginEmail, setLoginEmail] = useState('');
-  const [loginPassword, setLoginPassword] = useState('');
+  const [credentials, setCredentials] = useState({username:'',password:''});
+
   const handleChange = (e) => {
-    setLoginEmail(e.target.value);
+    setCredentials( (prev)=>{
+        return(
+        {
+          [e.target.name]: e.target.value
+        }
+        )
+    });
   };
-  const handleChange2 = (e) => {
-    setLoginPassword(e.target.value);
-  };
+
   const handleSubmit = (e) => {
     alert('logged in');
     e.preventDefault();
@@ -18,14 +22,14 @@ export default function Login() {
       <form onSubmit={handleSubmit}>
         <label>
           Email
-          <input type="text" value={loginEmail} onChange={handleChange} />
+          <input type="text" value={credentials.username} onChange={handleChange} name='username'/>
         </label>
         <input type="submit" value="Submit" />
       </form>
       <form onSubmit={handleSubmit}>
         <label>
           Password
-          <input type="text" value={loginPassword} onChange={handleChange2} />
+          <input type="text" value={credentials.password} onChange={handleChange} name='password' />
         </label>
         <input type="submit" value="Submit" />
       </form>
