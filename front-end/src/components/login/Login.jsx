@@ -1,15 +1,15 @@
 import { React, useState } from 'react';
+import { Link } from 'react-router-dom';
+import styles from './Login.css';
 
 export default function Login() {
-  const [credentials, setCredentials] = useState({username:'',password:''});
+  const [credentials, setCredentials] = useState({ email: '', password: '' });
 
   const handleChange = (e) => {
-    setCredentials( (prev)=>{
-        return(
-        {
-          [e.target.name]: e.target.value
-        }
-        )
+    setCredentials((prev) => {
+      return {
+        [e.target.name]: e.target.value,
+      };
     });
   };
 
@@ -20,19 +20,21 @@ export default function Login() {
   return (
     <div>
       <form onSubmit={handleSubmit}>
-        <label>
+        <label className="label">
           Email
-          <input type="text" value={credentials.username} onChange={handleChange} name='username'/>
+          <input type="text" value={credentials.email} onChange={handleChange} name="email" />
         </label>
-        <input type="submit" value="Submit" />
-      </form>
-      <form onSubmit={handleSubmit}>
-        <label>
+
+        <label className="label">
           Password
-          <input type="text" value={credentials.password} onChange={handleChange} name='password' />
+          <input type="text" value={credentials.password} onChange={handleChange} name="password" />
         </label>
-        <input type="submit" value="Submit" />
+        <input type="submit" value="Login" />
       </form>
+      <p>Not Signed up yet? </p>
+      <Link to="/registration">
+        <a>Register</a>
+      </Link>
     </div>
   );
 }

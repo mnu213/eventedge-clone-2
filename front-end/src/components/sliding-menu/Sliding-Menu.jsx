@@ -7,7 +7,7 @@ function SlidingMenu(props) {
 
   const links = [
     <Link to="/home" onClick={onClose}>
-      <a className="link" >Home</a>
+      <a className="link">Home</a>
     </Link>,
     <Link to="/chats" onClick={onClose}>
       <a className="link">Chats</a>
