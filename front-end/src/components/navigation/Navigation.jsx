@@ -5,7 +5,9 @@ import styles from './Navigation.css';
 
 function Navigation() {
   const [menuVisible, setMenuVisible] = useState(false);
-
+  const logout = ()=>{
+    localStorage.removeItem('email');
+  }
   return (
     <>
       <div className="navbar">
@@ -14,8 +16,8 @@ function Navigation() {
             ☰
           </button>
           <h1 className="title">EventEdge</h1>
-          <Link to="/login" className="navlogin">
-            Login
+          <Link to="/login" className="navlogout" onClick={logout}>
+            Logout
           </Link>
         </nav>
         {menuVisible && <SlidingMenu onClose={() => setMenuVisible(false)} />}

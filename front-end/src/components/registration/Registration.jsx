@@ -14,7 +14,7 @@ export default function Login() {
   };
 
   const handleSubmit = (e) => {
-    alert('registered');
+    alert('registered does nothing tho in background');
     e.preventDefault();
   };
   return (
