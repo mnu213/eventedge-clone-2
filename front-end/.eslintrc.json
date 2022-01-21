@@ -21,6 +21,7 @@
     "prefer-const": "off",
     "jsx-a11y/label-has-associated-control": "off",
     "no-alert": "off",
-    "jsx-a11y/anchor-is-valid": "off"
+    "jsx-a11y/anchor-is-valid": "off",
+    "no-console":"off"
   }
 }

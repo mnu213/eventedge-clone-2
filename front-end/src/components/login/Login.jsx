@@ -1,24 +1,41 @@
 import { React, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import styles from './Login.css';
 
+
+
 export default function Login() {
-  const [credentials, setCredentials] = useState({ email: '', password: '' });
+  const pretendDatabase = {
+    email:  'mnu213@nyu.edu',
+    password: '123'
+  }
+  const navigate = useNavigate();
+
+  const [credentials, setCredentials] = useState({ 'email': '', 'password': '' });
 
   const handleChange = (e) => {
     setCredentials((prev) => {
       return {
+        ...prev,
         [e.target.name]: e.target.value,
       };
     });
   };
 
   const handleSubmit = (e) => {
-    alert('logged in');
+    if (credentials.email === pretendDatabase.email && credentials.password === pretendDatabase.password){
+      localStorage.setItem("username",credentials.email)
+      navigate("/chats")
+    }
+    else {
+      alert("wrong credentials")
+    }
+    
     e.preventDefault();
   };
   return (
     <div>
+
       <form onSubmit={handleSubmit}>
         <label className="label">
           Email
@@ -33,7 +50,7 @@ export default function Login() {
       </form>
       <p>Not Signed up yet? </p>
       <Link to="/registration">
-        <a>Register</a>
+        Register
       </Link>
     </div>
   );

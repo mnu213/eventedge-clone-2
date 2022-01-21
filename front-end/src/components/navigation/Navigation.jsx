@@ -14,8 +14,8 @@ function Navigation() {
             ☰
           </button>
           <h1 className="title">EventEdge</h1>
-          <Link to="/login">
-            <a className="navlogin">Login</a>
+          <Link to="/login" className="navlogin">
+            Login
           </Link>
         </nav>
         {menuVisible && <SlidingMenu onClose={() => setMenuVisible(false)} />}
