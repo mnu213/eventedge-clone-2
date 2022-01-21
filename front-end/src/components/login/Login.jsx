@@ -24,7 +24,7 @@ export default function Login() {
 
   const handleSubmit = (e) => {
     if (credentials.email === pretendDatabase.email && credentials.password === pretendDatabase.password){
-      localStorage.setItem("username",credentials.email)
+      localStorage.setItem("email",credentials.email)
       navigate("/chats")
     }
     else {
