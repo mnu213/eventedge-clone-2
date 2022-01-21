@@ -35,7 +35,7 @@ export default function Login() {
   };
   return (
     <div>
-
+      <h1>EventEdge</h1>
       <form onSubmit={handleSubmit}>
         <label className="label">
           Email

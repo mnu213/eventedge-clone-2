@@ -1,4 +1,5 @@
 import { React, useState } from 'react';
+import {Link} from 'react-router-dom';
 import styles from './Registration.css';
 
 export default function Login() {
@@ -18,6 +19,7 @@ export default function Login() {
   };
   return (
     <div>
+      <h1>EventEdge</h1>
       <form onSubmit={handleSubmit}>
         <label className="label">
           Username
@@ -35,6 +37,10 @@ export default function Login() {
         </label>
         <input type="submit" value="Register" />
       </form>
+      <p>Have an account? </p>
+      <Link to="/login">
+        Login
+      </Link>
     </div>
   );
 }
