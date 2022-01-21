@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import { Outlet, Link } from 'react-router-dom';
+import { AuthService } from '../../lib/services/auth-service';
 import SlidingMenu from '../sliding-menu/Sliding-Menu';
 import styles from './Navigation.css';
 
 function Navigation() {
   const [menuVisible, setMenuVisible] = useState(false);
   const logout = ()=>{
-    localStorage.removeItem('email');
+    AuthService.logout()
   }
   return (
     <>

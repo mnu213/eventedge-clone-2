@@ -3,7 +3,6 @@ import Chat from './chat/Chat';
 
 export default function Chats() {
 
-  if (!!localStorage.getItem('email')) 
   return (
     <>
       <input />

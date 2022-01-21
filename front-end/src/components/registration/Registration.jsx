@@ -8,6 +8,7 @@ export default function Login() {
   const handleChange = (e) => {
     setCredentials((prev) => {
       return {
+        ...prev,
         [e.target.name]: e.target.value,
       };
     });
@@ -33,7 +34,7 @@ export default function Login() {
 
         <label className="label">
           Password
-          <input type="text" value={credentials.password} onChange={handleChange} name="password" />
+          <input type="password" value={credentials.password} onChange={handleChange} name="password" />
         </label>
         <input type="submit" value="Register" />
       </form>

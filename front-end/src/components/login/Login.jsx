@@ -1,5 +1,6 @@
 import { React, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import { AuthService } from '../../lib/services/auth-service';
 import styles from './Login.css';
 
 
@@ -24,7 +25,7 @@ export default function Login() {
 
   const handleSubmit = (e) => {
     if (credentials.email === pretendDatabase.email && credentials.password === pretendDatabase.password){
-      localStorage.setItem("email",credentials.email)
+      AuthService.login(credentials.email)
       navigate("/chats")
     }
     else {
@@ -44,7 +45,7 @@ export default function Login() {
 
         <label className="label">
           Password
-          <input type="text" value={credentials.password} onChange={handleChange} name="password" />
+          <input type="password" value={credentials.password} onChange={handleChange} name="password" />
         </label>
         <input type="submit" value="Login" />
       </form>
