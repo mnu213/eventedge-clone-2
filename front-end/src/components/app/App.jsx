@@ -15,17 +15,32 @@ function App() {
     <div>
       <BrowserRouter>
         <Routes>
-          <Route path="login" element = {<Login/>}
-              // element={
-              //   (1+1 === 3)? <Login/>: navigate('/chats')
-              // }
+          <Route
+            path="login"
+            element={<Login />}
+            // element={
+            //   (1+1 === 3)? <Login/>: navigate('/chats')
+            // }
           />
           <Route path="registration" element={<Registration />} />
           <Route path="/" element={<Navigation />}>
             <Route path="home" element={<Home />} />
-            <Route path="chats" element={<PrivateComponent><Chats /></PrivateComponent>} />
-            <Route path="events" element={<PrivateComponent><Events /></PrivateComponent>} />
-            
+            <Route
+              path="chats"
+              element={
+                <PrivateComponent>
+                  <Chats />
+                </PrivateComponent>
+              }
+            />
+            <Route
+              path="events"
+              element={
+                <PrivateComponent>
+                  <Events />
+                </PrivateComponent>
+              }
+            />
           </Route>
         </Routes>
       </BrowserRouter>

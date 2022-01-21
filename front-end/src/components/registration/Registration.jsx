@@ -1,5 +1,5 @@
 import { React, useState } from 'react';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import styles from './Registration.css';
 
 export default function Login() {
@@ -34,14 +34,17 @@ export default function Login() {
 
         <label className="label">
           Password
-          <input type="password" value={credentials.password} onChange={handleChange} name="password" />
+          <input
+            type="password"
+            value={credentials.password}
+            onChange={handleChange}
+            name="password"
+          />
         </label>
         <input type="submit" value="Register" />
       </form>
       <p>Have an account? </p>
-      <Link to="/login">
-        Login
-      </Link>
+      <Link to="/login">Login</Link>
     </div>
   );
 }

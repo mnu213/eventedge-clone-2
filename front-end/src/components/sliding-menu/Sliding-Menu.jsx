@@ -11,7 +11,7 @@ function SlidingMenu(props) {
     </Link>,
     <Link to="/events" className="link" onClick={onClose}>
       Events
-    </Link>
+    </Link>,
   ];
   return (
     <div className="slidingMenu">

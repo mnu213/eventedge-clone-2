@@ -6,9 +6,9 @@ import styles from './Navigation.css';
 
 function Navigation() {
   const [menuVisible, setMenuVisible] = useState(false);
-  const logout = ()=>{
-    AuthService.logout()
-  }
+  const logout = () => {
+    AuthService.logout();
+  };
   return (
     <>
       <div className="navbar">

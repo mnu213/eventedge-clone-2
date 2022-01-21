@@ -3,16 +3,14 @@ import { Link, useNavigate } from 'react-router-dom';
 import { AuthService } from '../../lib/services/auth-service';
 import styles from './Login.css';
 
-
-
 export default function Login() {
   const pretendDatabase = {
-    email:  'mnu213@nyu.edu',
-    password: '123'
-  }
+    email: 'mnu213@nyu.edu',
+    password: '123',
+  };
   const navigate = useNavigate();
 
-  const [credentials, setCredentials] = useState({ 'email': '', 'password': '' });
+  const [credentials, setCredentials] = useState({ email: '', password: '' });
 
   const handleChange = (e) => {
     setCredentials((prev) => {
@@ -24,14 +22,16 @@ export default function Login() {
   };
 
   const handleSubmit = (e) => {
-    if (credentials.email === pretendDatabase.email && credentials.password === pretendDatabase.password){
-      AuthService.login(credentials.email)
-      navigate("/chats")
+    if (
+      credentials.email === pretendDatabase.email &&
+      credentials.password === pretendDatabase.password
+    ) {
+      AuthService.login(credentials.email);
+      navigate('/chats');
+    } else {
+      alert('wrong credentials');
     }
-    else {
-      alert("wrong credentials")
-    }
-    
+
     e.preventDefault();
   };
   return (
@@ -45,14 +45,17 @@ export default function Login() {
 
         <label className="label">
           Password
-          <input type="password" value={credentials.password} onChange={handleChange} name="password" />
+          <input
+            type="password"
+            value={credentials.password}
+            onChange={handleChange}
+            name="password"
+          />
         </label>
         <input type="submit" value="Login" />
       </form>
       <p>Not Signed up yet? </p>
-      <Link to="/registration">
-        Register
-      </Link>
+      <Link to="/registration">Register</Link>
     </div>
   );
 }

@@ -2,7 +2,6 @@ import React from 'react';
 import Chat from './chat/Chat';
 
 export default function Chats() {
-
   return (
     <>
       <input />
