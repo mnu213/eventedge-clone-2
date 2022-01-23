@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Event from './event/Event';
-import PendingEvents from '../pending-events/pending-events';
+import PendingEvents from '../pending-events-modal/pending-events-modal';
 
 export default function Events() {
   const [modalVisible, setModalVisible] = useState(false);
