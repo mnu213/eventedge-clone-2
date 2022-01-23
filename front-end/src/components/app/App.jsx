@@ -8,6 +8,7 @@ import Home from '../home/home';
 import Events from '../events/Events';
 import Chats from '../chats/chats';
 import PrivateComponent from '../private-component/private-component';
+import Chat from '../chat/chat';
 
 function App() {
   const navigate = useNavigate;
@@ -33,6 +34,8 @@ function App() {
                 </PrivateComponent>
               }
             />
+            <Route path="chats/:chatId" element={<Chat />} />
+
             <Route
               path="events"
               element={
