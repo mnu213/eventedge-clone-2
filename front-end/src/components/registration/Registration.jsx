@@ -22,25 +22,33 @@ export default function Login() {
     <div>
       <h1>EventEdge</h1>
       <form onSubmit={handleSubmit}>
-        <label className="label">
-          Username
-          <input type="text" value={credentials.username} onChange={handleChange} name="username" />
-        </label>
+        <input
+          className="input"
+          placeholder="Username"
+          type="text"
+          value={credentials.username}
+          onChange={handleChange}
+          name="username"
+        />
 
-        <label className="label">
-          Email
-          <input type="text" value={credentials.email} onChange={handleChange} name="email" />
-        </label>
+        <input
+          className="input"
+          placeholder="Email"
+          type="text"
+          value={credentials.email}
+          onChange={handleChange}
+          name="email"
+        />
 
-        <label className="label">
-          Password
-          <input
-            type="password"
-            value={credentials.password}
-            onChange={handleChange}
-            name="password"
-          />
-        </label>
+        <input
+          className="input"
+          placeholder="Password"
+          type="password"
+          value={credentials.password}
+          onChange={handleChange}
+          name="password"
+        />
+
         <input type="submit" value="Register" />
       </form>
       <p>Have an account? </p>
