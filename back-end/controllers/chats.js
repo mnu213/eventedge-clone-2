@@ -9,7 +9,7 @@ const getChats = (req, res) => {
 };
 const getChatMembers = (req, res) => {
   console.log('getChatsMembers');
-  const s = `getadsChatMembers ${req.params.id}`
+  const s = `getadsChatMembers ${req.params.id}`;
   res.send(s);
 };
 
