@@ -1,10 +1,13 @@
 import express from 'express';
+import morgan from 'morgan';
 import authRouter from './routes/auth.js';
 import chatsRouter from './routes/chats.js';
 import eventsRouter from './routes/events.js';
 import usersRouter from './routes/users.js';
 
 const app = express();
+
+app.use(morgan('dev'));
 
 app.get('/', (req, res) => {
   res.send('Hello asdljsaidjaisoworld!');
