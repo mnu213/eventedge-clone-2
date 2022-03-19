@@ -1,12 +1,20 @@
 import express from 'express';
 import morgan from 'morgan';
 import cors from 'cors';
+import mongoose from 'mongoose';
+import dotenv from 'dotenv';
+
 import authRouter from './routes/auth.js';
 import chatsRouter from './routes/chats.js';
 import eventsRouter from './routes/events.js';
 import usersRouter from './routes/users.js';
 
 const app = express();
+
+dotenv.config();
+mongoose.connect(
+  `mongodb+srv://dbUser:${process.env.DB_PASSWORD}@cluster0.pi0gw.mongodb.net/eventEdgeClone?retryWrites=true&w=majority`
+);
 
 // middlewares
 app.use(morgan('dev'));
