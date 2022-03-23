@@ -1,6 +1,10 @@
 import mongoose from 'mongoose';
 import bcrypt from 'bcrypt';
+import dotenv from 'dotenv';
+import jwt from 'jsonwebtoken';
 import User from '../models/user.js';
+
+dotenv.config();
 
 const login = async (req, res, next) => {
   // User.find({email: req.body.email})
@@ -17,16 +21,19 @@ const login = async (req, res, next) => {
   console.log(users);
   if (users.length < 1) {
     res.status(401).json({message: 'Auth failed'});
-  }else{
+  } else {
     const match = await bcrypt.compare(req.body.password, users[0].password);
     if (match) {
-      res.status(200).json({message: 'Login Successful'});
+      const token = jwt.sign(
+        {email: users[0].email, userId: users[0]._id},
+        process.env.JWT_KEY,
+        {expiresIn: '1h'}
+      );
+      res.status(200).json({message: 'Login Successful',token:token});
     } else {
       res.status(401).json({message: 'Auth failed'});
     }
   }
-
-
 };
 
 const register = (req, res, next) => {
