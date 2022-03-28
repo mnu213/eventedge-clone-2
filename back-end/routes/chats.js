@@ -6,7 +6,7 @@ const router = express.Router();
 
 router.post('/', createChat);
 
-router.get('/', checkAuth ,getChats);
+router.get('/', checkAuth, getChats);
 
 router.get('/:id/members', getChatMembers);
 
