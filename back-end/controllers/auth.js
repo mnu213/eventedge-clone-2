@@ -29,7 +29,7 @@ const login = async (req, res, next) => {
         process.env.JWT_KEY,
         {expiresIn: '1h'}
       );
-      res.status(200).json({message: 'Login Successful',token:token});
+      res.status(200).json({message: 'Login Successful', token: token});
     } else {
       res.status(401).json({message: 'Auth failed'});
     }
