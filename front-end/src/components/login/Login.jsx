@@ -1,13 +1,10 @@
+import axios from 'axios';
 import { React, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthService } from '../../lib/services/auth-service';
 import styles from './Login.css';
 
 export default function Login() {
-  const pretendDatabase = {
-    email: 'mnu213@nyu.edu',
-    password: '123',
-  };
   const navigate = useNavigate();
 
   const [credentials, setCredentials] = useState({ email: '', password: '' });
@@ -21,23 +18,29 @@ export default function Login() {
     });
   };
 
-  const handleSubmit = (e) => {
-    if (
-      credentials.email === pretendDatabase.email &&
-      credentials.password === pretendDatabase.password
-    ) {
-      AuthService.login(credentials.email);
-      navigate('/chats');
-    } else {
-      alert('wrong credentials');
-    }
-
+  const loginReq = async (e, email, password) => {
     e.preventDefault();
+    let res = false;
+    try {
+      res = await axios.post('http://localhost:8000/auth/login', {
+        email: email,
+        password: password,
+      });
+      const { token } = res.data;
+      console.log(token);
+
+      AuthService.login(token);
+      // navigate('/chats');
+    } catch (err) {
+      console.log(err.message);
+      alert('Auth Failed');
+    }
   };
   return (
     <div>
       <h1>EventEdge</h1>
-      <form onSubmit={handleSubmit}>
+
+      <form onSubmit={(e) => loginReq(e, credentials.email, credentials.password)}>
         <input
           className="input"
           placeholder="Email"

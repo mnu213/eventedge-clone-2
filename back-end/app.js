@@ -3,6 +3,7 @@ import morgan from 'morgan';
 import cors from 'cors';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
+import bodyParser from 'body-parser';
 
 import authRouter from './routes/auth.js';
 import chatsRouter from './routes/chats.js';
@@ -19,8 +20,10 @@ mongoose.connect(
 // middlewares
 app.use(morgan('dev'));
 app.use(cors());
-app.use(express.urlencoded({extended: true}));
-app.use(express.json());
+app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.json());
+// app.use(express.urlencoded({extended: true}));
+// app.use(express.json());
 
 app.get('/', (req, res) => {
   res.send('Hello asdljsaidjaisoworld!');
