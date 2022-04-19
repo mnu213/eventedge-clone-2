@@ -1,4 +1,4 @@
-const key = 'email';
+const key = 'token';
 
 export class AuthService {
   static isLoggedIn() {
@@ -9,7 +9,7 @@ export class AuthService {
     localStorage.removeItem(key);
   }
 
-  static login(loginEmail) {
-    localStorage.setItem('email', loginEmail);
+  static login(token) {
+    localStorage.setItem(key, token);
   }
 }

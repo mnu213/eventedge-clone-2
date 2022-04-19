@@ -5,7 +5,7 @@ const createChat = (req, res) => {
 
 const getChats = (req, res) => {
   console.log('getChats');
-  res.send('getChats');
+  res.send({userData: req.userData, message: 'getChats'});
 };
 const getChatMembers = (req, res) => {
   console.log('getChatsMembers');
