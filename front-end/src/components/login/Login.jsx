@@ -1,7 +1,6 @@
 import axios from 'axios';
 import { React, useState, useContext, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { AuthService } from '../../lib/services/auth-service';
 import styles from './Login.css';
 import { AuthContext } from '../../context/auth';
 
@@ -15,6 +14,7 @@ export default function Login() {
   useEffect(() => {
     console.log(context);
   }, []);
+  console.log("testin login frontend outside of return inside function")
   const handleChange = (e) => {
     setCredentials((prev) => {
       return {
@@ -35,7 +35,7 @@ export default function Login() {
       const { token } = res.data;
       console.log(token);
 
-      AuthService.login(token);
+      context.login(token);
       // navigate('/chats');
     } catch (err) {
       console.log(err.message);
