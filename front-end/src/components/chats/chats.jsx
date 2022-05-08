@@ -11,6 +11,7 @@ export default function Chats() {
         +{' '}
       </button>
       <h2>Blahg</h2>
+      
       {modalVisible && <CreateChat onClose={() => setModalVisible(false)} />}
     </>
   );

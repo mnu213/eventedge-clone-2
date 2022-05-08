@@ -14,6 +14,7 @@ export default function Login() {
   useEffect(() => {
     console.log(context);
   }, []);
+  
   console.log("testin login frontend outside of return inside function")
   const handleChange = (e) => {
     setCredentials((prev) => {
@@ -36,7 +37,7 @@ export default function Login() {
       console.log(token);
 
       context.login(token);
-      // navigate('/chats');
+      navigate('/chats');
     } catch (err) {
       console.log(err.message);
       alert('Auth Failed');
