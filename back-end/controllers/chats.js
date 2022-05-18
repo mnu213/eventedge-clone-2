@@ -8,7 +8,7 @@ const createChat = (req, res) => {
 const getChats = async (req, res) => {
   console.log('getChats');
   const users = await User.find({_id: req.userData.userId}).exec();
-  const {chats} = users[0]
+  const {chats} = users[0];
   res.send({chats: chats, message: 'getChats'});
 };
 const getChatMembers = (req, res) => {

@@ -14,8 +14,8 @@ export default function Login() {
   useEffect(() => {
     console.log(context);
   }, []);
-  
-  console.log("testin login frontend outside of return inside function")
+
+  console.log('testin login frontend outside of return inside function');
   const handleChange = (e) => {
     setCredentials((prev) => {
       return {
